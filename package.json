@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "repository": "https://github.com/alexluong/rng-starter.git",
   "author": "alexluong",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "formik": "^1.3.0"
+  }
 }
