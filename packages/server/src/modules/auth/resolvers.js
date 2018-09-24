@@ -25,6 +25,16 @@ const resolvers = {
         throw new Error("Incorrect Password")
       }
     },
+    signUpWithEmailAndPassword: async (parents, args, { User }) => {
+      const user = await User.findOne({ email })
+
+      if (user) {
+        throw new Error("User with this email already exists")
+      } else {
+        const user = await new User(args).save()
+        return createAuthPayload(user)
+      }
+    },
   },
 }
 
